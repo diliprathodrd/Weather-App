@@ -75,5 +75,6 @@ body {
 @media screen and (max-width: 720px) {
   .app-main {
     width: 80%;
+    height: 70vh;
   }
 }
