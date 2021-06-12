@@ -13,7 +13,7 @@ body {
   background-size: cover;
 }
 .app-main {
-  width: 50vh;
+  width: 50%;
   margin: 30px auto;
   background-color: rgba(240, 248, 255, 0.6);
   padding: 20px;

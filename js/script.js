@@ -46,7 +46,7 @@ function showWeatherReport(weather) {
   let date = document.getElementById("date");
   let todayDate = new Date();
   date.innerText = dateManage(todayDate);
-
+  /*
   if (weatherType.textContent == "Clear") {
     document.body.style.backgroundImage = "url('../images/clear.jpg')";
   } else if (weatherType.textContent == "Clouds") {
@@ -62,6 +62,7 @@ function showWeatherReport(weather) {
   } else if (weatherType.textContent == "Haze") {
     document.body.style.backgroundImage = "url('../images/haze.jpg')";
   }
+  */
 }
 
 //Date Manage
