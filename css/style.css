@@ -72,3 +72,8 @@ body {
 .footer a {
   color: #fff;
 }
+@media screen and (max-width: 720px) {
+  .app-main {
+    width: 80%;
+  }
+}
