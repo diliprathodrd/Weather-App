@@ -27,25 +27,26 @@ function getWeatherReport(city) {
 
 //Show Weather Report
 function showWeatherReport(weather) {
-  console.log(weather);
-
   let city = document.getElementById("city");
-  city.innerText = `${weather.name}, ${weather.sys.country}`;
-
   let temp = document.getElementById("temp");
-  temp.innerHTML = `${Math.round(weather.main.temp)}&deg;C`;
-
   let minMaxTemp = document.getElementById("min-max");
-  minMaxTemp.innerHTML = `${Math.floor(
-    weather.main.temp_min
-  )}&deg;C (min)/ ${Math.ceil(weather.main.temp_max)}&deg;C (max)`;
-
   let weatherType = document.getElementById("weather");
-  weatherType.innerText = `${weather.weather[0].main}`;
-
   let date = document.getElementById("date");
   let todayDate = new Date();
+
+  if(weather.cod === 200) {
+  city.innerText = `${weather.name}, ${weather.sys.country}`;
+  temp.innerHTML = `${Math.round(weather.main.temp)}&deg;C`;
+  minMaxTemp.innerHTML = `${Math.floor(weather.main.temp_min)}&deg;C (min)/ ${Math.ceil(weather.main.temp_max)}&deg;C (max)`;
+  weatherType.innerText = `${weather.weather[0].main}`;
   date.innerText = dateManage(todayDate);
+  } else {
+  city.innerText = "";
+  temp.innerHTML = `${weather.message}`;
+  minMaxTemp.innerHTML = "";
+  weatherType.innerText = "";
+  date.innerText = "";
+  }
   /*
   if (weatherType.textContent == "Clear") {
     document.body.style.backgroundImage = "url('../images/clear.jpg')";
